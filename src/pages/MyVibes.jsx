@@ -1,5 +1,5 @@
-import { useState, Suspense } from 'react';
-import Dither from '../components/Dither';
+import { useState } from 'react';
+import Background from '../components/Background';
 
 function MyVibes() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,21 +16,8 @@ function MyVibes() {
 
   return (
     <>
-      {/* Animated Dither Background */}
-      <div className="dither-background">
-        <Suspense fallback={<div style={{ width: '100%', height: '100%', background: '#0a0a0a' }} />}>
-          <Dither
-            waveColor={[0.5, 0.5, 0.5]}  // Greyscale
-            disableAnimation={false}
-            enableMouseInteraction={false}
-            mouseRadius={0.3}
-            colorNum={4}
-            waveAmplitude={0.43}
-            waveFrequency={2.5}
-            waveSpeed={0.025}
-          />
-        </Suspense>
-      </div>
+      {/* Page Background */}
+      <Background />
 
       {/* Page Header */}
       <div className="page-header">
